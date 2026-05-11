@@ -57,8 +57,8 @@ function setup() {
     });
   }
  
-  // ── "Explore More" button — one physics object, drawn as a rounded button ──
-  objs.push({
+  // ── "Explore More" button — rendered first so it appears behind all other objects ──
+  objs.unshift({
     type: 'button',
     e: 'EXPLORE MORE',
     x: width / 2,
@@ -98,7 +98,7 @@ function drawButton(o) {
   fill('white');
   noStroke();
   textAlign(CENTER, CENTER);
-  text('EXPLORE MORE', 0, 0);
+  text('#EXPLOREMORE', 0, 0);
 }
  
 function draw() {
@@ -107,7 +107,17 @@ function draw() {
   let bw = bg.width * scale, bh = bg.height * scale;
   image(bg, (width - bw) / 2, (height - bh) / 2, bw, bh);
   imageMode(CENTER);
- 
+
+  // center instruction text — drawn behind all physics objects
+  push();
+  textFont('Barabara');
+  textSize(35);
+  textAlign(CENTER, CENTER);
+  noStroke();
+  fill(255);
+  text("DIG OUT THE PARADISE'S TRASH TO FIND THE HASHTAG TO HEAD TO THE NEXT PAGE!", width / 2, height / 2);
+  pop();
+
   for (let o of objs) {
     // physics — same for all types
     if (!o.grabbed) {
@@ -207,7 +217,7 @@ function mouseDragged() {
 function mouseReleased() {
   if (!held) return;
   if (held.type === 'button' && !btnWasDragged) {
-    window.location.href = '../sketch3/index.html';
+    document.getElementById('explore-more').click();
     return;
   }
   held.grabbed = false;

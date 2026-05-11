@@ -16,7 +16,6 @@ let mainPoints = [];
 let backg;
 
 let W, H;
-let hotBtn = null;
 const BEZEL = 28;
 const FSIZE = 100;
 
@@ -86,31 +85,6 @@ function draw() {
   noStroke();
   rect(0, 0, W, H);
 
-  // hot text — fades in as mouse nears the top
-  let txtAlpha = map(mouseY, H * 0.45, H * 0.08, 0, 220, true);
-  if (txtAlpha > 0 && font) {
-    push();
-    textFont(font);
-    textSize(20);
-    textAlign(CENTER, CENTER);
-    noStroke();
-    fill(255, 255, 255, txtAlpha);
-    let msg = 'ITS GETTING HOT!\nLETS HEAD TO THE FOREST.';
-    let tx = W / 2, ty = H * 0.13;
-
-    textFont('Barabara');
-    text(msg, tx, ty);
-    pop();
-    // generous hit area — centered on text, fixed size
-    hotBtn = { x: W * 0.1, y: ty - 30, w: W * 0.8, h: 60 };
-    let over = mouseX >= hotBtn.x && mouseX <= hotBtn.x + hotBtn.w &&
-               mouseY >= hotBtn.y && mouseY <= hotBtn.y + hotBtn.h;
-    cursor(over ? HAND : ARROW);
-  } else {
-    hotBtn = null;
-    cursor(ARROW);
-  }
-
   drawWave(mainPoints);
 }
 
@@ -134,11 +108,4 @@ function drawWave(pointsArray) {
   endShape();
 }
 
-function mousePressed() {
-  if (hotBtn &&
-      mouseX >= hotBtn.x && mouseX <= hotBtn.x + hotBtn.w &&
-      mouseY >= hotBtn.y && mouseY <= hotBtn.y + hotBtn.h) {
-    window.location.href = '../sketch2/index.html';
-  }
-}
 

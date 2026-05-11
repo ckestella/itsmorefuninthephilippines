@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="style.css">
     <style>
       @font-face {
@@ -19,6 +19,24 @@
     <!-- Required for textToPoints -->
     <script src="https://unpkg.com/opentype.js@1.3.4/dist/opentype.min.js"></script>
 
+  <style>
+    #hot-text {
+      position: fixed;
+      top: 10vh;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'Barabara', sans-serif;
+      font-size: 30px;
+      line-height: 1.6;
+      color: white;
+      text-decoration: none;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      z-index: 999;
+    }
+  </style>
   </head>
   <body>
 
@@ -26,8 +44,18 @@
       <!--<h2> Sketch 1</h2> -->
       <script src="sketch.js"></script>
     </div>
-    <a class="hashtag" href="../sketch2/index.html">#ITSMOREFUNINTHEPHILIPPINES</a>
-    
-  
+    <a id="hot-text" href="../sketch2/index.html">ITS GETTING HOT! LETS HEAD TO THE FOREST IN THIS HASHTAG.<br>#EXPLOREMORE</a>
+
+    <!--Debugged via Claude below for sketch1, (May, 2026) -->
+    <script>
+      window.addEventListener('mousemove', function(e) {
+        var el = document.getElementById('hot-text');
+        var pct = e.clientY / window.innerHeight;
+        var a = Math.max(0, Math.min(1, (0.45 - pct) / (0.45 - 0.08)));
+        el.style.opacity = a;
+        el.style.pointerEvents = a > 0.05 ? 'auto' : 'none';
+      });
+    </script>
+
   </body>
 </html>

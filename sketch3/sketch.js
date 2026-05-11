@@ -13,7 +13,7 @@ let soundLeft, soundRight;
 let audioUnlocked = false; // BUG FIX: browsers block audio until user interacts
  
 // ── WIND / FLOW SETTINGS — tweak these ──
-const TEXT_STRING = "ITS MORE FUN IN THE PHILIPPINES";
+const TEXT_STRING = "#ITSMOREFUNINTHEPHILIPPINES";
 const FONT_SIZE   = 100;
 const WAVE_AMP    = 30;
 const WAVE_SPEED  = 0.03;
@@ -60,21 +60,34 @@ function draw() {
   }
  
   waveOffset += WAVE_SPEED;
- 
+
+  if (overText()) cursor(HAND);
+  else cursor(ARROW);
+
   // show prompt until audio is unlocked
   if (!audioUnlocked) {
     textFont('Barabara');
     textSize(16);
     fill('rgba(255,255,255,0.7)');
-    text('CLICK ANYWHERE TO ENABLE THE SOUNDS OF THE PHILIPPINES', width / 2, height - 30);
+    text('CLICK ANYWHERE TO ENABLE THE SOUNDS OF PARADISE', width / 2, height - 30);
   }
 }
  
+function overText() {
+  let halfW = (TEXT_STRING.length * LETTER_GAP) / 2;
+  return abs(mouseX - width / 2) < halfW &&
+         abs(mouseY - height / 2) < FONT_SIZE / 2 + WAVE_AMP;
+}
+
 function mousePressed() {
   if (!audioUnlocked) {
     userStartAudio(); // unlocks the browser audio context
     audioUnlocked = true;
     return; // first click just unlocks — play sound on next click
+  }
+  if (overText()) {
+    document.getElementById('hashtag-link').click();
+    return;
   }
   playZoneSound();
 }
