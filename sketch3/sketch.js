@@ -67,7 +67,7 @@ function draw() {
   // show prompt until audio is unlocked
   if (!audioUnlocked) {
     textFont('Barabara');
-    textSize(16);
+    textSize(30);
     fill('rgba(255,255,255,0.7)');
     text('CLICK ANYWHERE TO ENABLE THE SOUNDS OF PARADISE', width / 2, height - 30);
   }
