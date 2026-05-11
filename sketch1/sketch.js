@@ -95,8 +95,10 @@ function draw() {
     textAlign(CENTER, CENTER);
     noStroke();
     fill(255, 255, 255, txtAlpha);
-    let msg = 'ITS GETTING HOT! LETS HEAD TO THE FOREST.';
+    let msg = 'ITS GETTING HOT!\nLETS HEAD TO THE FOREST.';
     let tx = W / 2, ty = H * 0.13;
+
+    textFont('Barabara');
     text(msg, tx, ty);
     pop();
     // generous hit area — centered on text, fixed size
@@ -140,4 +142,3 @@ function mousePressed() {
   }
 }
 
-// add thermostat bottom center

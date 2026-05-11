@@ -1,0 +1,47 @@
+body {
+    background-image: url("../img/aboutme.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ABOUT {
+    text-align: center;
+}
+
+@font-face {
+    font-family: 'Barabara';
+    src: url('../font/BARABARA-final.otf') format('opentype');
+}
+
+
+h1, p, .hashtag {
+    font-family: 'Barabara', sans-serif;
+    font-size: 50px;
+}
+
+.hashtag {
+    color: white;
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+    cursor: default;
+}
+
+.hashtag:hover {
+    color: #FFD700;
+    text-shadow: 0 0 8px #FFD700, 0 0 20px #FFD700, 0 0 40px #FFD700;
+}
+
+h3 {
+    font-size: 40px;
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
