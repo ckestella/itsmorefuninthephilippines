@@ -13,6 +13,11 @@ body {
 
 #ABOUT {
     text-align: center;
+    background: rgba(0, 56, 168, 0.45);
+    border-radius: 24px;
+    padding: 40px 60px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
 @font-face {
