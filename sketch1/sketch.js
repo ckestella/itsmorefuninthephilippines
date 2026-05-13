@@ -86,6 +86,15 @@ function draw() {
   rect(0, 0, W, H);
 
   drawWave(mainPoints);
+
+  push();
+  textFont('Barabara');
+  textSize(30);
+  textAlign(CENTER, CENTER);
+  noStroke();
+  fill('rgba(255,255,255,0.7)');
+  text('MOVE YOUR CURSOR UP AND DOWN', W / 2, H - 30);
+  pop();
 }
 
 function drawWave(pointsArray) {

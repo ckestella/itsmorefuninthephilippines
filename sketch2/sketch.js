@@ -115,8 +115,8 @@ function draw() {
   textSize(35);
   textAlign(CENTER, CENTER);
   noStroke();
-  fill(255);
-  text("DIG OUT THE PARADISE'S TRASH TO FIND THE HASHTAG TO HEAD TO THE NEXT PAGE!", width / 2, height / 2);
+  fill('rgba(255,255,255,0.7)');
+  text("THIS IS EMBARASSING!\nLETS DIG OUT THE CLICKABLE HASHTAG TO PROCEED FURTHER", width / 2, height / 2);
   pop();
 
   for (let o of objs) {

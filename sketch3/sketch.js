@@ -64,12 +64,21 @@ function draw() {
   if (overText()) cursor(HAND);
   else cursor(ARROW);
 
-  // show prompt until audio is unlocked
+  // instruction above the flowing text
+  noStroke();
+  textFont('Barabara');
+  textSize(30);
+  fill('rgba(255,255,255,0.7)');
+  text('THIS IS THE END OF THE ROAD.  CLICK THE # TO HEAD BACK HOME!', width / 2, height - 30);
+
+  // bottom prompt — swaps after audio is unlocked
+  textFont('Barabara');
+  textSize(30);
+  fill('rgba(255,255,255,0.7)');
   if (!audioUnlocked) {
-    textFont('Barabara');
-    textSize(30);
-    fill('rgba(255,255,255,0.7)');
-    text('CLICK ANYWHERE TO ENABLE THE SOUNDS OF PARADISE', width / 2, height - 30);
+    text('CLICK ANYWHERE TO ENABLE THE SOUNDS OF PARADISE', width / 2, height - 80);
+  } else {
+    text('MOVE YOUR CURSOR LEFT OR RIGHT', width / 2, height - 80);
   }
 }
  
