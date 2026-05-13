@@ -1,6 +1,6 @@
 /*
   FREE FALL OBJECTS — p5.js
-  Developed and assisted with Claude (Anthropic), April 2026
+  Developed and assisted with Claude (Anthropic), May 2026
   Assisted using Liat's coding example for this subject.
   NOTES:
   - Creating complex physics to create the free falling effect via mousePressed(), mouseDragged(), hits(o), and mouseReleased()

@@ -1,6 +1,7 @@
 /*
   FLOWING TEXT — p5.js
-  Developed and assisted with Claude (Anthropic), April 2026
+  Developed and assisted with Claude (Anthropic), May 2026
+  
   NOTES:
   - Barabara font flows like wind using sin() wave offsets per character
   - MouseX left half  → plays soundLeft
