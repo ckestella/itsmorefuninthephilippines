@@ -102,6 +102,7 @@ function drawButton(o) {
 }
  
 function draw() {
+  background(0);
   imageMode(CORNER);
   let scale = max(width / bg.width, height / bg.height);
   let bw = bg.width * scale, bh = bg.height * scale;
